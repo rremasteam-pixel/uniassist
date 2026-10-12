@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-ink-50 text-ink-900 antialiased dark:bg-ink-950 dark:text-ink-100; }
+  h1, h2, h3 { @apply font-display tracking-tight; }
+}
+
+@layer components {
+  .card { @apply rounded-2xl border border-ink-100 bg-white shadow-sm dark:border-ink-800 dark:bg-ink-900; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-brass-400; }
+  .btn-primary { @apply btn bg-ink-800 text-white hover:bg-ink-700 dark:bg-brass-500 dark:text-ink-950 dark:hover:bg-brass-400; }
+  .btn-ghost { @apply btn text-ink-700 hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-800; }
+  .btn-danger { @apply btn bg-red-600 text-white hover:bg-red-500; }
+  .input { @apply w-full rounded-xl border border-ink-200 bg-white px-3 py-2 text-sm placeholder:text-ink-400 focus:border-ink-500 focus:outline-none focus:ring-2 focus:ring-ink-200 dark:border-ink-700 dark:bg-ink-900 dark:focus:ring-ink-700; }
+  .label { @apply mb-1 block text-xs font-medium uppercase tracking-wide text-ink-500 dark:text-ink-400; }
+  .prose-chat p { @apply mb-2 last:mb-0; }
+  .prose-chat ul { @apply mb-2 list-disc pl-5; }
+  .prose-chat ol { @apply mb-2 list-decimal pl-5; }
+  .prose-chat blockquote { @apply border-l-2 border-brass-400 pl-3 italic text-ink-600 dark:text-ink-300; }
+  .prose-chat strong { @apply font-semibold; }
+}

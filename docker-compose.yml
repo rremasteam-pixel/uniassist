@@ -1,0 +1,15 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: uniassist
+      POSTGRES_PASSWORD: uniassist
+      POSTGRES_DB: uniassist
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U uniassist"]
+      interval: 3s
+      retries: 20
+volumes:
+  pgdata:
